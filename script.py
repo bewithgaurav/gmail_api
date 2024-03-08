@@ -40,6 +40,7 @@ def fetch_emails():
     messages = results.get('messages', [])
     for message in messages:
         print(message)
+        print()
     return service, messages
 
 # Function to store emails in the database
@@ -57,6 +58,7 @@ def store_emails(service, messages):
         snippet = msg['snippet']
         unread = 'UNREAD' in msg['labelIds']
         print(subject, sender, date, snippet, unread)
+        print()
         cursor.execute("INSERT INTO emails (id, subject, sender, date, snippet, unread) VALUES (?, ?, ?, ?, ?, ?)",
                        (message['id'], subject, sender, date, snippet, unread))
     conn.commit()

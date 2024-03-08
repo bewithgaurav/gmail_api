@@ -1,20 +1,20 @@
 [
   {
-    "predicate": "Any",
+    "predicate": "any",
     "conditions": [
       {
-        "field": "From",
-        "operator": "Contains",
-        "value": "gmail.com"
+        "field": "subject",
+        "operator": "contains",
+        "value": "Congrats"
       },
       {
         "field": "subject",
-        "operator": "Contains",
-        "value": "HappyFox"
+        "operator": "contains",
+        "value": "Password"
       }
     ],
     "actions": [
-      "Mark as unread"
+      "mark as read"
     ]
   }
 ]

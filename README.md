@@ -43,8 +43,16 @@ This Python script integrates with the Gmail API to fetch emails from your inbox
 
 ## Test Cases
 
-- **Unit Tests**: Write unit tests to verify the functionality of individual functions in the script, such as authentication, fetching emails, storing emails, applying rules, and performing actions.
-- **Integration Tests**: Test the entire application flow to ensure that emails are fetched, stored, and processed correctly according to the defined rules.
+- **Unit Tests**: The unit tests are written in `tests.py`
+1. `test_authentication`: This test verifies whether the authentication process with Google OAuth succeeds. It ensures that the authenticate_gmail() function returns non-null credentials, indicating successful authentication.
+
+2. `test_fetch_emails`: This test checks whether the script can successfully fetch emails from the Gmail inbox. It verifies that the fetch_emails() function returns a non-empty list of messages, indicating that emails have been successfully retrieved.
+
+3. `test_store_emails`: This test ensures that emails fetched from the Gmail inbox are correctly stored in the SQLite database. It verifies that after fetching emails and storing them using the store_emails() function, the number of emails stored in the database is greater than zero.
+
+4. `test_load_rules`: This test validates the loading of rules from the rules.json file. It checks whether the load_rules() function successfully loads rules from the JSON file and ensures that at least one rule is loaded.
+
+5. `test_apply_rules`: This test verifies the application of rules to the fetched emails. It applies rules loaded from the rules.json file to the stored emails and checks for any desired effects of rule application. Additional assertions can be added to validate specific actions performed by the rules.
 
 ## Potential Issues
 
