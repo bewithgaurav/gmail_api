@@ -1,0 +1,6 @@
+# Ignore Python bytecode files
+__pycache__/
+
+# Ignore Google OAuth credentials files
+credentials.json
+token.json
